@@ -1,3 +1,4 @@
+import { BestSellerSection } from '~/components/best-seller-section'
 import { HomeHero } from '~/components/home-hero'
 import { AppLayout } from '~/components/layouts/app-layout'
 import { ShopSection } from '~/components/shop-section'
@@ -11,6 +12,7 @@ export default function Home({ title, description }: PageProps) {
     <AppLayout title={title} description={description}>
       <HomeHero />
       <ShopSection />
+      <BestSellerSection />
     </AppLayout>
   )
 }
