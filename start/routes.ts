@@ -8,5 +8,5 @@
 */
 
 import router from '@adonisjs/core/services/router'
-router.on('/').renderInertia('home')
-
+const AppController = () => import('../app/controllers/app_controller.js')
+router.get('/', [AppController, 'index'])
