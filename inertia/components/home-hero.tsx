@@ -5,7 +5,7 @@ export const HomeHero: FunctionComponent = () => {
   return (
     <div className={'relative w-full px-6 lg:px-12 mx-auto'}>
       <img src={bg} alt="background" className={'w-full object-cover z-0 hidden lg:block'} />
-      <div className="block lg:hidden aspect-[3/4] sm:aspect-[4/3] bg-primary-soft rounded-[20px]"></div>
+      <div className="block lg:hidden aspect-[3.5/6] sm:aspect-[4/3] bg-primary-soft rounded-[20px]"></div>
       <div className="absolute z-10 inset-0 px-6 lg:px-12 flex items-center">
         <div className="px-6 lg:px-12 xl:px-24 w-full lg:w-2/3 text-center lg:text-left space-y-8">
           <div className="space-y-4">

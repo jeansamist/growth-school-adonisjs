@@ -31,7 +31,7 @@ export const Topbar: FunctionComponent = () => {
     },
   ])
   return (
-    <nav className="p-6 h-auto lg:h-[130px] bg-white border-b border-[#F0F0F0] flex items-center">
+    <nav className="py-6 h-auto lg:h-[130px] bg-white border-b border-[#F0F0F0] flex items-center">
       <div
         className={
           'flex flex-col lg:flex-row lg:justify-between gap-6 items-center w-full px-6 lg:px-12 mx-auto'
@@ -46,7 +46,7 @@ export const Topbar: FunctionComponent = () => {
               key={index}
               href={link.href}
               className={cn(
-                'font-bold hover:text-primary transition-color duration-200',
+                'font-bold text-sm sm:text-base hover:text-primary transition-color duration-200',
                 link.isActive && 'text-primary',
                 link.href === '/bestsellers' && 'text-secondary'
               )}
