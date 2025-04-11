@@ -1,7 +1,9 @@
 import { BestSellerSection } from '~/components/best-seller-section'
+import { FeatureBookSection } from '~/components/feature-book-section'
 import { HomeHero } from '~/components/home-hero'
 import { AppLayout } from '~/components/layouts/app-layout'
 import { ShopSection } from '~/components/shop-section'
+import { TestimonialSection } from '~/components/testimonial-section'
 import { BookCardProps } from '~/components/ui/book-card'
 
 interface PageProps {
@@ -15,6 +17,8 @@ export default function Home({ title, description, books }: PageProps) {
       <HomeHero />
       <ShopSection />
       <BestSellerSection books={books} />
+      <FeatureBookSection />
+      <TestimonialSection />
     </AppLayout>
   )
 }

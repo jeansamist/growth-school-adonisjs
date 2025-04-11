@@ -8,6 +8,8 @@ export type BookCardProps = {
   title: string
   price: number
   tags: { name: string; id: number }[]
+  openModal?: () => void
+  setBook?: React.Dispatch<React.SetStateAction<BookCardProps>>
 }
 
 export const BookCard: FunctionComponent<BookCardProps> = ({
@@ -17,6 +19,8 @@ export const BookCard: FunctionComponent<BookCardProps> = ({
   title,
   price,
   tags,
+  openModal,
+  setBook,
 }) => {
   return (
     <div className={'w-full'}>
@@ -71,7 +75,24 @@ export const BookCard: FunctionComponent<BookCardProps> = ({
         )}
       </div>
       <div className="pt-4">
-        <Button className="w-full">Acheter</Button>
+        <Button
+          onClick={() => {
+            if (setBook && openModal) {
+              openModal()
+              setBook({
+                cover,
+                discount_percentage,
+                average_rate,
+                title,
+                price,
+                tags,
+              })
+            }
+          }}
+          className="w-full"
+        >
+          Acheter
+        </Button>
       </div>
     </div>
   )
