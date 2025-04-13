@@ -8,17 +8,17 @@
 */
 
 import router from '@adonisjs/core/services/router'
-const BooksController = () => import('../app/controllers/books_controller.js')
-const AppController = () => import('../app/controllers/app_controller.js')
-router.get('/', [AppController, 'index'])
+const FilesController = () => import('#controllers/files_controller')
+
+router.get('/', async () => {
+  return {
+    hello: 'world',
+  }
+})
+
 router
   .group(() => {
-    router
-      .group(() => {
-        router.get('/add-book', [BooksController, 'create']).as('add-book').as('create')
-      })
-      .prefix('/book')
-      .as('book')
+    router.post('/', [FilesController, 'upload'])
+    router.get('/get/*', [FilesController, 'get'])
   })
-  .prefix('/admin')
-  .as('admin')
+  .prefix('/upload')
