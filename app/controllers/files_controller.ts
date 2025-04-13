@@ -6,7 +6,7 @@ import { normalize, sep } from 'node:path'
 export default class FilesController {
   async upload({ request, response }: HttpContext) {
     const file = request.file('file', {
-      size: '2mb',
+      size: '500mb',
     })
     if (!file) {
       return response.ok({
